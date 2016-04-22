@@ -1,6 +1,7 @@
 #!/bin/bash
 #grabar bitacora
-tamaniomax=5 # 5 a modo de ejemplo despues poner LOGSIZE
+LOGDIR="informes" # esto desùes borrar por variables globales"
+tamaniomax=50 # 5 a modo de ejemplo despues poner LOGSIZE
 excedido=0 # en 0 significa que no se exedio, en 1 se exedio
 if [ $# != 3 -a $# != 2 ] ; #veo si los parametros estan correctos
 	then
@@ -8,7 +9,7 @@ if [ $# != 3 -a $# != 2 ] ; #veo si los parametros estan correctos
 	exit 1
 fi
 #cambiar informes por variable global LOGDIR
-log="informes/$1.log"
+log="$LOGDIR/$1.log"
 #echo "se guardo en $1" # a modo de guia
 if [ $# = 3 ] ;
 	then
